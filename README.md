@@ -1,2 +1,2 @@
 # seocho
-seocho web develop course
+서초구 개발 과정
