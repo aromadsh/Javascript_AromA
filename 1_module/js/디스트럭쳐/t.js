@@ -23,3 +23,5 @@ var f2 = function(user) { console.log(user.id, user.nae) };
 const f3 = (user) => console.log(user.id, user.name);
 
 console.log(f2, f3);
+
+const user = {id: 1, name: 'Hong', passwd: 'xxx', addr: 'Seoul'}
