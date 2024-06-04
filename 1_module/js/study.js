@@ -1,18 +1,23 @@
 const web_dev = {
-    Language : 'Javascript',
-    period : 3,
-    experience : false,
     os : ['window', 'Linux', 'macOS'],
     skill : {
-        data : {
-            python : ['Tensorflow', 'Pytorch'],
-            s : [1, 2, 3]
-        }, 
-        R : ['tidyverse', 'shiny'], 
-        SQL : { java : 'Hibernate', python : 'SQLAlchemy'}}
+        analyze : ['python', 'R', 'SQL'],
+        engineering : ['Hadoop', 'Spark', 'Kafka']
+    },
+    language : ['C', ['java', 'c#'], ['python', 'dart']]
 }
 
-const {os, skill : {python}} = web_dev;
+const {skill, os, ...language} = web_dev;
 
-console.log(web_dev);
-// console.log(python);
+const {_, ...a} = language;
+
+console.log(a);
+
+// {
+//     analyze: [ 'python', 'R', 'SQL' ],
+//     engineering: [ 'Hadoop', 'Spark', 'Kafka' ]
+//   }
+
+//   [ 'window', 'Linux', 'macOS' ]
+
+//   { language: [ 'C', [ 'java', 'c#' ], [ 'python', 'dart' ] ] }

@@ -3,18 +3,32 @@ console.log("user 객체를 받아서 id와 name을 출력하는 함수를 3개�
 const hong = {id: 1, name: 'Hong'};
 const lee = {id: 2, name: 'Lee'};
 
-function f1 (user) { console.log(`${user.id}, '${user.name}'`); };
+// function f1 (user) { console.log(`${user.id}, '${user.name}'`); };
 
-var f2 = function (user) { console.log(`${user.id}, '${user.name}'`); };
+// var f2 = function (user) { console.log(`${user.id}, '${user.name}'`); };
 
-const f3 = (user) => { console.log(`${user.id}, '${user.name}'`); };
+// const f3 = (user) => { console.log(`${user.id}, '${user.name}'`); };
 
+// f1(hong);
+// f2(hong);
+// f3(hong);
+// f1(lee);
+// f2(lee);
+// f3(lee);
+
+function f1 ({id, name}) {
+    console.log(id, name);
+}
+
+const f2 = function ({id, name}) {
+    console.log(id, name);
+};
+
+const f3 = ({id, name}) => console.log(id, name);
 f1(hong);
 f2(hong);
 f3(hong);
-f1(lee);
-f2(lee);
-f3(lee);
+
 
 console.log("\n\n");
 

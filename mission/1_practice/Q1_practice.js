@@ -1,11 +1,13 @@
 console.log("for문을 이용하여 다음과 같이 정확한 숫자를 출력하는 코드를 작성하시오.");
 
 for(let i = 0.1; i < 1; i += 0.1) console.log(Number(i.toFixed(1)));
+// for(let i = 0.1; i < 1; i += 0.1) console.log(+i.toFixed(1));
 
 console.log("\n\n");
 
 console.log("1 ~ 10 사이의 정수에 대해 제곱근을 소숫점 3자리까지 출력하시오.");
 for (let i = 1; i <= 10; i++) console.log(Number(Math.sqrt(i).toFixed(3)));
+// 무리수만 출력해야 됨! 
 
 console.log("\n\n");
 
@@ -14,8 +16,8 @@ console.log("오늘 날짜의 요일을 출력하는 switch문을 사용해서 �
 const dt = new Date();
 
 // switch문을 사용하지 않고, 가장 간단한 방법
-const week = '일월화수목금토'
-console.log(`${week[dt.getDay()]}요일`);
+const WEEK_NAMES = '일월화수목금토';
+console.log(`${WEEK_NAMES[dt.getDay()]}요일`);
 
 // switch문을 사용한 방법
 let result = "";
@@ -41,7 +43,7 @@ switch (dt.getDay()) {
     case 6:
         result = '토';
         break;
-};
+}
 console.log(`${result}요일`);
 
 
@@ -52,8 +54,8 @@ console.log("다음과 같이 올바른 더하기 연산을 하는 addPoints 함
 let a, b;
 function addPoints (a, b) {
     let fix;
-    af = a.toString().length;
-    bf = b.toString().length;
+    let af = (a ?? '').toString().length;
+    let bf = (b ?? '').toString().length;
 
     if (af >= bf) fix = af;
     else fix = bf;
@@ -64,3 +66,23 @@ addPoints(0.21354, 0.1);
 addPoints(0.14, 0.28);
 addPoints(0.34, 0.226); 
 
+// function getLen(s) {
+//     return (s ?? '').toString().length;
+// }
+
+// function addPoints (a, b) {
+//     let fix;
+//     let af = (a ?? '').toString().length;
+//     let bf = (b ?? '').toString().length;
+
+//     if (af >= bf) fix = af;
+//     else fix = bf;
+//     console.log((a+b).toFixed(fix-2));
+// };
+
+// const len = Math.max(getLen(a), getLen(b));
+// const ret = (a + b).toFixed(len-2);
+
+// addPoints(0.21354, 0.1);
+// addPoints(0.14, 0.28);
+// addPoints(0.34, 0.226); 
